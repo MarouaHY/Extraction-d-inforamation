@@ -9,7 +9,7 @@ def euclidean_distance(descriptor1, descriptor2):
     return np.linalg.norm(descriptor1 - descriptor2)
 
 # Titre de l'application
-st.write('<h1 style="font-family:Arial; color:black; text-align:center;">Iris Identification System</h1>', unsafe_allow_html=True)
+st.write('<h1 style="font-family:Arial; color:grey; text-align:center;">Iris Identification System</h1>', unsafe_allow_html=True)
 st.write('<h5 style="font-family:Arial; color:grey; text-align:center;">Identify individuals based on their iris patterns.</h5>', unsafe_allow_html=True)
 
 # Chargement de l'image requête
