@@ -20,26 +20,26 @@ if image_requete_path is not None:  # Check if an image is uploaded
     image = cv2.imdecode(np.frombuffer(image_requete_path.read(), np.uint8), cv2.IMREAD_COLOR)
     
     # Display original image
-    st.header("Original Image")
+    st.subheader("Original Image")
     st.image(image, channels="BGR")
     
     # Processing details
     if image is not None:  # Check if image is processed
         st.write("Image processing details...")  # Display processing info
     else:
-        st.info("En attente du traitement de l'image.")  # Informative message while processing
+        st.info("Waiting for the processing.")  # Informative message while processing
     
     # Rest of your code for processing the uploaded image...
 
 else:
-    st.info(" Please upload an image for identification.")  # Inform user to upload an image
+    st.info(" Please upload an image.")  # Inform user to upload an image
 
 
 if image_requete_path:
     # Chargez l'image requête en niveaux de gris
     #image_requete = cv2.imdecode(np.fromstring(image_requete_path.read(), np.uint8), cv2.IMREAD_GRAYSCALE)
     
-    st.header("Grayscale Image")
+    st.subheader("Grayscale Image")
 
     image_requete = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -50,8 +50,8 @@ if image_requete_path:
     st.subheader("SIFT Keypoint Detection")
     sift = cv2.SIFT_create()
     keypoints_requete, descripteurs_requete = sift.detectAndCompute(image_requete, None)
-    st.write(f"Number of Keypoints Detected:  {len(keypoints_requete)}")
-    st.write(f"Number of Descriptors Extracted:  {descripteurs_requete.shape[0]}")
+    st.write(f"Number of Keypoints Detected :  {len(keypoints_requete)}")
+    st.write(f"Number of Descriptors Extracted :  {descripteurs_requete.shape[0]}")
     
     
     st.subheader('Image with SIFT Keypoints')
@@ -78,7 +78,7 @@ if image_requete_path:
 
     # Trouver l'indice du modèle avec la distance minimale
     min_distance_index = np.argmin(distances)
-    st.subheader('Iris Identification')
+    st.subheader('Identification result')
 
     # Vérifier si la distance minimale est inférieure au seuil donné
     if distances[min_distance_index] < threshold:
