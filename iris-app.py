@@ -71,7 +71,7 @@ if image_requete_path:
     database_descriptors = np.load(os.path.join("descripteurs_base_de_donnees_folder", "descripteurs_base_de_donnees.npy"))
 
     # Seuil pour décider de l'acceptation ou du rejet
-    threshold = 8500  # À définir selon vos besoins
+    threshold = 10000  # À définir selon vos besoins
 
     # Calcul des distances euclidiennes entre le descripteur de l'image requête et chaque modèle
     distances = [euclidean_distance(descripteurs_requete, descriptor) for descriptor in database_descriptors]
