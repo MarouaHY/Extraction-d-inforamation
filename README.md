@@ -15,3 +15,5 @@ Features:
 -Recognition Result: If a match is found, the interface displays the index of the corresponding iris, along with the recognition decision: "Identified" or "Not identified".
 
 The application is deployed using Streamlit Sharing [You can reach the Iris Recognition application here.](https://extraction-d-inforamation.streamlit.app/)
+
+This file "code_exctraction_bd.py" contains the complete source code of the enrollment phase (loading the database, preprocessing the images, and extracting the characteristics of all the images from the database)
